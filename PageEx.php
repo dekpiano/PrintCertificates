@@ -1,3 +1,10 @@
+<?php
+session_start();
+include_once  'db_connect.php';
+$mysqli = connect();
+$sel = select("SELECT * FROM tb_certificate_project WHERE proj_ID = '".$_GET['ExIdProject']."'");
+//print_r($sel);
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,15 +26,15 @@
 $mpdf = new \Mpdf\Mpdf([
     'orientation' => 'L',
     'format' => [210, 297],
-    'default_font_size' => 38,
+    'default_font_size' => $sel[0]['proj_FontSize'],
     'default_font' => 'sarabun'
 ]);
 
 $mpdf->SetTitle("เกียรติบัตร");
 
-              $html = ' <div style="padding-top:220px;text-align: center;width:100%;font-weight: bold;z-index:99">ทดสอบ</div>
+              $html = ' <div style="padding-top:'.$sel[0]["proj_AxisX"].'px;text-align: center;width:100%;font-weight: bold;z-index:99">'.$sel[0]["proj_NameTest"].'</div>
               <div style="position: absolute; left:0; right: 0; top: 0; bottom: 0;z-index:-99">
-              <img src="0001.jpg" 
+              <img src="uploads/'.$sel[0]["proj_Img"].'" 
                    style="width: 210mm; height: 297mm; margin: 0;" />
           </div>'; 
 

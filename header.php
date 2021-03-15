@@ -1,3 +1,7 @@
+<?php session_start();
+include_once  'db_connect.php';
+$mysqli = connect();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -134,7 +138,7 @@
                 <div class="sidebar-sticky">
                     <ul class="nav flex-column">
                         <li class="nav-item">
-                            <a class="nav-link active" href="#">
+                            <a class="nav-link active" href="PageMain.php">
                                 <span data-feather="home"></span>
                                 โครงการ <span class="sr-only">(current)</span>
                             </a>

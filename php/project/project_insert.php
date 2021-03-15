@@ -51,6 +51,10 @@ if ($uploadOk == 0) {
       'proj_Img' => $NewName,
       'proj_User' => $_SESSION["AdminID"],
       'proj_CreateDate' => date('Y-m-d H:i:s'),
+      'proj_NameTest' => "ชื่อ นามสกุล",
+      'proj_AxisX' => 220,
+      '100proj_FontSize' => 30,
+      'proj_FontColor' => '#000000'
     );
 
     $add = insert('tb_certificate_project',$data);
