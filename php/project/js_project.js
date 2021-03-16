@@ -26,9 +26,9 @@ $("#FormInsertProject").on('submit', function(e) {
                 $('#exampleModalLong').modal('hide')
             } else {
                 Swal.fire(
-                    'Good job!',
-                    'แก้ไข' + response.message,
-                    'success'
+                    'แจ้งเตือน!',
+                    response.message,
+                    'error'
                 )
             }
             $('#FormInsertProject').css("opacity", "");
@@ -39,7 +39,7 @@ $("#FormInsertProject").on('submit', function(e) {
             $('#FormInsertProject').css("opacity", "");
             Swal.fire(
                 'แจ้งเตือน!',
-                'กรอกข้อมูลให้ครบถ้วน',
+                'กรอกข้อมูลให้ครบถ้วน' + error.responseText,
                 'error'
             )
         }

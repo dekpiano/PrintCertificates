@@ -7,7 +7,7 @@ $target_dir = "../../uploads/";
 $target_file = $target_dir;
 $uploadOk = 1;
 $imageFileType = explode('.',$_FILES['proj_Img']['name']);
-$NewName = date('YmdHis').'.'.$imageFileType[1];
+$NewName = date('YmdHis').'.'.@$imageFileType[1];
 
 // Check if image file is a actual image or fake image
 if(isset($_POST["submit"])) {
@@ -29,14 +29,14 @@ if ($_FILES["proj_Img"]["size"] > 500000) {
 }
 
 // Allow certain file formats
-if($imageFileType[1] != "pdf" && $imageFileType[1] != "PDF" ) {
-  $response['message'] = "Sorry, only PDF files are allowed.";
+if(@$imageFileType[1] != "jpg" && @$imageFileType[1] != "jpeg" && @$imageFileType[1] != "png") {
+  $response['message'] = "อัพโหลด เฉพาะสกุลไฟล์ jpg png เท่านั้น";
   $uploadOk = 0;
 }
 
 // Check if $uploadOk is set to 0 by an error
 if ($uploadOk == 0) {
-  $response['message'] = "Sorry, your file was not uploaded.";
+  //$response['message'] = "Sorry, your file was not uploaded.";
 // if everything is ok, try to upload file
 } else {
   if (move_uploaded_file($_FILES["proj_Img"]["tmp_name"], $target_file.$NewName)) {
@@ -53,7 +53,7 @@ if ($uploadOk == 0) {
       'proj_CreateDate' => date('Y-m-d H:i:s'),
       'proj_NameTest' => "ชื่อ นามสกุล",
       'proj_AxisX' => 220,
-      '100proj_FontSize' => 30,
+      'proj_FontSize' => 30,
       'proj_FontColor' => '#000000'
     );
 

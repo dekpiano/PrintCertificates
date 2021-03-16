@@ -45,7 +45,7 @@
                         <label for="exampleFormControlFile1">ไฟล์เกียรติบัตร</label>
                         <input type="file" class="form-control" id="proj_Img" name="proj_Img" placeholder="ปีการศึกษา *"
                             required>
-                            <div class="invalid-feedback">กรุณาเลือกไฟล์เกียรติบัตร PDF</div>
+                            <div class="invalid-feedback">กรุณาเลือกไฟล์เกียรติบัตร  jpg หรือ png</div>
                     </div>
             </div>
             <div class="modal-footer">
