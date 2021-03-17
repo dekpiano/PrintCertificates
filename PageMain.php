@@ -27,7 +27,7 @@
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="btn-group">
                                     <a href="PageSetting.php?IdProject=<?=$v_proj['proj_ID']?>" class="btn btn-sm btn-outline-secondary">ตั้งค่า</a>
-                                    <a href="#" class="btn btn-sm btn-outline-secondary">แก้ไข</a>
+                                    <a href="#" id="EditProject" project-ID="<?=$v_proj['proj_ID']?>" class="btn btn-sm btn-outline-secondary EditProject">แก้ไข</a>
                                     <a href="#" class="btn btn-sm btn-outline-secondary">พิมพ์</a>
                                 </div>
                                 <small class="text-muted">9 mins</small>

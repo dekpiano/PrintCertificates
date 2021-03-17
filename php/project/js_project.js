@@ -111,3 +111,18 @@ $("#SaveSuccess").on('click', function() {
 
     })
 });
+
+$(".EditProject").on('click', function() {
+    $('#modal_update').modal('show'); 
+    let projIDFromModal =  $(this).attr('project-id');  
+
+    $.post("php/project/ProjecrEditor.php", {ProjID: projIDFromModal}, function(data,status,xhr){
+        //console.log(data[0].proj_NameProject);
+        $('#up_proj_NameProject').val(data[0].proj_NameProject);
+        $('#up_proj_Topic').val(data[0].proj_Topic);
+        $('#up_proj_Abbreviution').val(data[0].proj_Abbreviution);
+        $('#up_proj_NumberStart').val(data[0].proj_NumberStart);
+        $('#up_proj_Years').val(data[0].proj_Years);
+      },'json');
+
+});
