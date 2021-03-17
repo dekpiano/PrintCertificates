@@ -89,7 +89,7 @@ $(document).ready(function(e) {
     })();
 });
 </script>
-<script src="php/project/js_project.js"></script>
+<script src="php/project/js_project.js?v=1000"></script>
 
 
 </html>

@@ -23,10 +23,10 @@ if(isset($_POST["submit"])) {
 
 
 // Check file size
-if ($_FILES["proj_Img"]["size"] > 500000) {
-  $response['message'] = "Sorry, your file is too large.";
-  $uploadOk = 0;
-}
+// if ($_FILES["proj_Img"]["size"] > 1000000) {
+//   $response['message'] = "Sorry, your file is too large.";
+//   $uploadOk = 0;
+// }
 
 // Allow certain file formats
 if(@$imageFileType[1] != "jpg" && @$imageFileType[1] != "jpeg" && @$imageFileType[1] != "png") {
@@ -39,8 +39,7 @@ if ($uploadOk == 0) {
   //$response['message'] = "Sorry, your file was not uploaded.";
 // if everything is ok, try to upload file
 } else {
-  if (move_uploaded_file($_FILES["proj_Img"]["tmp_name"], $target_file.$NewName)) {
-    
+  if (move_uploaded_file($_FILES["proj_Img"]["tmp_name"], $target_file.$NewName)) {    
     
     $data  = array(
       'proj_NameProject' => $mysqli->real_escape_string($_POST['proj_NameProject']), 

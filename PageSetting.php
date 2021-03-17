@@ -17,9 +17,11 @@ input[type="color"] {
 
         </div>
     </div>
-    <div class="row">
+    <div class="row mb-4">
         <div class="col-md-4">
-            <form>
+            <form id="FormUpdateProject">
+            <input type="text" class="form-control d-none" placeholder="ชื่อที่ ใช้ทดสอบ" id="proj_ID" name="proj_ID"
+                        value="<?=$sel_set[0]['proj_ID']?>" >
                 <div class="form-group">
                     <label for="email">ชื่อที่ใช้ทดสอบ</label>
                     <input type="text" class="form-control" placeholder="ชื่อที่ ใช้ทดสอบ" id="proj_NameTest" name="proj_NameTest"
@@ -50,8 +52,8 @@ input[type="color"] {
                     <input type="text" class="form-control" placeholder="ตำแหน่งหมายเลขเกียรติบัตร แกนแนวตั้ง" id="proj_NumberAxisY" name="proj_NumberAxisY" value="<?=$sel_set[0]['proj_NumberAxisY']?>">
                 </div>
                 <div class="btn-group btn-group-lg">
-                    <button type="button" class="btn btn-primary">บันทึก</button>
-                    <button type="button" class="btn btn-warning">ดูตัวอย่าง</button>
+                    <button type="button" id="SaveSuccess" class="btn btn-primary">บันทึก</button>
+                    <button type="submit" class="btn btn-warning">ดูตัวอย่าง</button>
                 </div>
             </form>
         </div>

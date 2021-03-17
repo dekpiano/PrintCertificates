@@ -32,7 +32,7 @@ $mpdf = new \Mpdf\Mpdf([
 
 $mpdf->SetTitle("เกียรติบัตร");
 
-              $html = ' <div style="padding-top:'.$sel[0]["proj_AxisX"].'px;text-align: center;width:100%;font-weight: bold;z-index:99">'.$sel[0]["proj_NameTest"].'</div>
+              $html = ' <div style="padding-top:'.$sel[0]["proj_AxisX"].'px;text-align: center;width:100%;font-weight: bold;z-index:99;color:'.$sel[0]["proj_FontColor"].';">'.$sel[0]["proj_NameTest"].'</div>
               <div style="position: absolute; left:0; right: 0; top: 0; bottom: 0;z-index:-99">
               <img src="uploads/'.$sel[0]["proj_Img"].'" 
                    style="width: 210mm; height: 297mm; margin: 0;" />
